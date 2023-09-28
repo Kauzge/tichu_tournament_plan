@@ -23,7 +23,7 @@ Lokale Ausführung in der Kommandozeile.
 .Ausführung des Skripts
 [source,bash]
 ----
-poetry run python .\script\main.py -p 6 -r 3
+poetry run python ./script/main.py -p 6 -r 3
 ----
 
 [%header,cols="1,1,1,2"] 
@@ -63,4 +63,10 @@ NOTE: Wenn die Anzahl der Runden kleiner oder gleich der Anzahl der Spieler ist,
 [source,bash]
 ----
 poetry run python -m pytest ./script/tests.py
+----
+
+.Ausführung der Tests mit Coverage-Report
+[source,bash]
+----
+ poetry run pytest --cov=script --cov-report html:coverage-report  ./script/tests.py
 ----
