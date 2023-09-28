@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "tichu-tournament-plan"
+version = "1.0.0"
+description = "Script to create Tichu tournament plan"
+authors = ["Claudio"]
+readme = "README.adoc"
+packages = [{include = "tichu_tournament_plan"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openpyxl = "^3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
