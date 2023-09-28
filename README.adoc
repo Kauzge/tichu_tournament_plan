@@ -1,0 +1,65 @@
+= Tichu Turnierplan
+Mit diesem Python Skript lässt sich ein Turnierplan für das Kartenspiel Tichu erstellen. Es werden die Anzahl der Spieler und die Anzahl der Runden als Parameter übergeben. Das Skript erstellt dann einen entsprechenden Turnierplan und gibt diesen wahlweise über die Kommandozeile oder als fertige Excel Datei aus.
+Die Excel Datei enthält die entsprechenden Folmel, zur Ermittlung der gesamten Tichu- und Siegpunkte jedes Spielers.
+
+NOTE: Die aktuelle Version generiert nur Turnierpläne für Einzelturniere.
+
+== Vorraussetzungen
+* Python 3.10
+* Poetry
+
+== Installation
+
+.Installation der Dependencies
+[source,bash]
+----
+poetry install
+----
+
+== Ausführung
+Lokale Ausführung in der Kommandozeile.
+
+.Ausführung des Skripts
+[source,bash]
+----
+poetry run python .\script\main.py -p 6 -r 3
+----
+
+[%header,cols="1,1,1,2"] 
+|===
+|Name
+|Kurzform
+|Art
+|Beschreibung
+
+|--players
+|-p
+|Value
+|Anzahl der Spieler
+
+|--rounds
+|-r
+|Value
+|Anzahl der Runden
+
+|--terminal
+|-t
+|Falg
+|Ausagbe über die Kommandozeile anstatt in eine Excel Datei
+
+|--help
+|-h
+|Flag
+|Hilfe
+|===
+
+NOTE: Anzahl der Runden sollte restlos durch die Anzahl der Spieler teilbar sein, damit alle Spieler gleich oft an der Reihe sind.
+
+NOTE: Wenn die Anzahl der Runden kleiner oder gleich der Anzahl der Spieler ist, wird überprüft, dass jede Kombination von Spielern nicht mehr als einmal miteinander spielt.
+
+== Tests
+.Ausführung der Tests
+[source,bash]
+----
+poetry run python -m pytest ./script/tests.py
+----
