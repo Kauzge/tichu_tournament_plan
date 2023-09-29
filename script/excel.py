@@ -1,3 +1,4 @@
+# pylint: skip-file
 from openpyxl import Workbook
 from openpyxl.styles import Border, Side, Alignment
 from datetime import datetime
