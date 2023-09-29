@@ -1,26 +1,26 @@
-= Tichu Turnierplan
+= Tichu tournament schedule generator
 
-Mit diesem Python Skript lässt sich ein Turnierplan für das Kartenspiel Tichu erstellen. Es werden die Anzahl der Spieler und die Anzahl der Runden als Parameter übergeben. Das Skript erstellt dann einen entsprechenden Turnierplan und gibt diesen wahlweise über die Kommandozeile oder als fertige Excel Datei aus.
-Die Excel Datei enthält die entsprechenden Folmeln, zur Ermittlung der gesamten Tichu- und Siegpunkte jedes Spielers.
+This Python script can be used to create a tournament schedule for the card game Tichu. The number of players and the number of rounds are passed as parameters. The script then creates a corresponding tournament schedule and outputs it either via the command line or as a finished Excel file.
+The Excel file contains the corresponding formulae for determining the total Tichu and victory points of each player.
 
-NOTE: Die aktuelle Version generiert nur Turnierpläne für Einzelturniere.
+NOTE: The current version only generates tournament schedules for solo tournaments (after every match the players of each team are mixed up again).
 
-== Vorraussetzungen
+== Requirements
 * link:https://wiki.python.org/moin/BeginnersGuide/Download[Python]
 * link:https://python-poetry.org/docs/#installation[Poetry]
 
 == Installation
 
-.Installation der Dependencies
+.Installation of the dependencies
 [source,bash]
 ----
 poetry install
 ----
 
-== Ausführung
-Lokale Ausführung in der Kommandozeile.
+== Execution
+Local execution of the script on the command line
 
-.Ausführung des Skripts
+.Execution of the script with example parameters
 [source,bash]
 ----
 poetry run python ./script/main.py -p 6 -r 3
@@ -29,43 +29,43 @@ poetry run python ./script/main.py -p 6 -r 3
 [%header,cols="1,1,1,2"] 
 |===
 |Name
-|Kurzform
-|Art
-|Beschreibung
+|Short form
+|Type
+|Description
 
 |--players
 |-p
 |Value
-|Anzahl der Spieler
+|Amount of players participating in the tournament
 
 |--rounds
 |-r
 |Value
-|Anzahl der Runden
+|Number of rounds to be played
 
 |--terminal
 |-t
-|Falg
-|Ausagbe über die Kommandozeile anstatt in eine Excel Datei
+|Flag
+|If this flag is set the tournament schedule gets printed to the command line instead of generating an Excel file
 
 |--help
 |-h
 |Flag
-|Hilfe
+|Shows a help message on the command line
 |===
 
-NOTE: Anzahl der Runden sollte restlos durch die Anzahl der Spieler teilbar sein, damit alle Spieler gleich oft an der Reihe sind.
+NOTE: The number of rounds should be divisible without remainder by the number of players so that all players have the same number of turns.
 
-NOTE: Wenn die Anzahl der Runden kleiner oder gleich der Anzahl der Spieler ist, wird überprüft, dass jede Kombination von Spielern nicht mehr als einmal miteinander spielt.
+NOTE: If the number of rounds is less than or equal to the number of players, it is checked that each combination of players does not play together more than once.
 
-== Tests
-.Ausführung der Tests
+== Testing
+.Execution of the tests
 [source,bash]
 ----
 poetry run python -m pytest ./script/tests.py
 ----
 
-.Ausführung der Tests mit Coverage-Report
+.Execution of the tests with a coverage report
 [source,bash]
 ----
  poetry run pytest --cov=script --cov-report html:coverage-report  ./script/tests.py
