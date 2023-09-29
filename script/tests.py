@@ -1,4 +1,4 @@
-import pytest
+# pylint: skip-file
 import main
 
 def test_check_duplicate1():
